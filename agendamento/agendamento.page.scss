@@ -1,0 +1,90 @@
+ion-title {
+  background-color: #212020;
+}
+
+ion-header {
+  --background: #212020; /* Define a cor de fundo do cabeçalho */
+}
+
+ion-toolbar {
+  --background: #212020; /* Define a cor de fundo da barra de ferramentas */
+  --color: white; /* Define a cor do texto dentro da toolbar */
+}
+
+.content-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.agendar {
+  --background: #C38A2E;
+  width: 50%; 
+  --color: #fff;
+  border-radius: 20%; 
+
+}
+
+.barbers-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.barber {
+  text-align: center;
+  cursor: pointer;
+}
+
+.barber-image {
+  width: 100px; // Ajuste o tamanho da imagem conforme necessário
+  height: 100px; // Ajuste o tamanho da imagem conforme necessário
+  border-radius: 50%; // Para deixar a imagem circular, se desejado
+  object-fit: cover; // Para manter a proporção da imagem
+}
+
+
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.services-container {
+  margin-top: 20px;
+}
+
+// agendamento.page.scss
+
+.selected {
+  border: 2px solid #C38A2E; /* Adiciona uma borda ao horário selecionado */
+}
+ion-card {
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: transform 0.2s; /* Animação ao passar o mouse */
+}
+ion-card:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+

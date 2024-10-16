@@ -1,0 +1,7 @@
+{
+  "name": "BarberHub",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

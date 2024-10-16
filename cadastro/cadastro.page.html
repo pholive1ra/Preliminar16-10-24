@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botão de voltar -->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <!-- Fundo com imagem de barbearia -->
+  <div class="page-container">
+    <!-- Seção cinza com descrições e campos de cadastro -->
+    <div class="content-section">
+      <div class="logo-container">
+        <p class="welcome-text">Preencha os campos abaixo com seus dados</p>
+      </div>
+
+      <!-- Formulário de cadastro -->
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <!-- Campos de preenchimento de dados -->
+        <ion-item>
+          <ion-label position="floating">Nome completo</ion-label>
+          <ion-input type="text" [(ngModel)]="nome" name="nome" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input
+            type="tel"
+            [(ngModel)]="telefone"
+            name="telefone"
+            mask="(00) 00000-0000" 
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">CEP</ion-label>
+          <ion-input type="text" [(ngModel)]="cep" name="cep" required (ngModelChange)="buscarEnderecoPorCEP()"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Endereço completo</ion-label>
+          <ion-input type="text" [(ngModel)]="endereco" name="endereco" required readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="senha" required></ion-input>
+        </ion-item>
+
+        <!-- Botão para finalizar cadastro -->
+        <ion-button expand="full" type="submit" class="finalizar-cadastro">Finalizar cadastro</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

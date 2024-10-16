@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-content">
+      <img src="assets/logo.png" alt="BarberHub Logo" class="logo">
+      <ion-title>BarberHub</ion-title>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="content-section">
+    <ion-button fill="solid" class="agendar" (click)="toggleServices()">Agendar agora</ion-button>
+
+    <!-- Botão de Voltar -->
+    <ion-button fill="outline" class="voltar" *ngIf="selectedService" (click)="resetSelections()">Voltar</ion-button>
+
+    <!-- Botão para acessar os agendamentos -->
+    <ion-button fill="outline" class="meus-agendamentos" (click)="goToMyAppointments()">Meus Agendamentos</ion-button>
+
+    <!--<ion-button fill="outline" class="feedback" (click)="goToFeedback()">Dar Feedback</ion-button>-->
+
+    
+
+    <!-- Exibir serviços ao clicar no botão -->
+    <div *ngIf="showServices" class="services-container">
+      <ion-card (click)="selectService('Barboterapia')">
+        <ion-card-header>
+          <ion-card-title>Barboterapia - R$50</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card (click)="selectService('Pezinho')">
+        <ion-card-header>
+          <ion-card-title>Pezinho - R$12</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card (click)="selectService('Sobrancelha')">
+        <ion-card-header>
+          <ion-card-title>Sobrancelha - R$15</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card (click)="selectService('Corte')">
+        <ion-card-header>
+          <ion-card-title>Corte - R$30</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <!-- Se a seleção de um serviço foi feita, exibe a seleção do barbeiro -->
+    <div *ngIf="selectedService">
+      <p>Serviço selecionado: {{ selectedService }}</p>
+      <div class="barbers-container">
+        <div class="barber" (click)="selectBarber('Geovanne')">
+          <img src="assets/barbeiro1.jpg" alt="Barbeiro 1" class="barber-image">
+          <p>Geovanne</p>
+        </div>
+        <div class="barber" (click)="selectBarber('Ricardo')">
+          <img src="assets/barbeiro2.jpg" alt="Barbeiro 2" class="barber-image">
+          <p>Ricardo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exibir a agenda de horários ao selecionar um barbeiro -->
+    <div *ngIf="showSchedule && selectedBarber">
+      <h3>Horários disponíveis para {{ selectedBarber }}:</h3>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let time of barberSchedule[selectedBarber]" (click)="selectTime(time)" [class.selected]="selectedTime === time">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>{{ time }}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- Exibir botão Agendar ao selecionar um horário -->
+      <ion-button fill="solid" (click)="agendar()" *ngIf="selectedTime" class="agendar">Agendar</ion-button>
+    </div>
+  </div>
+</ion-content>

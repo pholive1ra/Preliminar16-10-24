@@ -1,0 +1,117 @@
+ion-title {
+  background-color: #212020;
+}
+
+@keyframes move-title {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.dynamic-title {
+  animation: move-title 3s linear infinite; 
+  white-space: nowrap; 
+}
+
+
+ion-header {
+  --background: #212020; 
+}
+
+ion-toolbar {
+  --background: #212020; 
+  --color: white; 
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+}
+
+
+
+.page-container {
+  position: relative;
+  height: 100vh;
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+ 
+  
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  
+}
+
+.content-section {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  background-color: #212020;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1rem;
+}
+
+.entrar {
+  --background: #C38A2E; 
+  --color: #fff;
+  border-radius: 20%; 
+}
+
+.cadastrar {
+  --border-color: #fff; 
+  --border-width: 1px;  
+  --color: #fff;        
+  --background: transparent; 
+}
+
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+ion-button {
+  width: 150px;
+}

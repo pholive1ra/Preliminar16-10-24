@@ -1,0 +1,18 @@
+.agendamentos-container {
+  padding: 16px;
+}
+
+ion-item {
+  --background: #f9f9f9; // Fundo claro para cada item
+  border-radius: 8px; // Bordas arredondadas
+  margin-bottom: 8px; // Espaçamento entre os itens
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra para dar profundidade
+}
+
+ion-label {
+  text-align: left; // Alinhar texto à esquerda
+}
+
+ion-button {
+  margin-left: 16px; // Espaçamento à esquerda do botão de exclusão
+}

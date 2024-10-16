@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button> <!-- Botão de voltar -->
+    </ion-buttons>
+    <ion-title>Dashboard Barbeiro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Área do Barbeiro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="agendamentos-container">
+    <ion-list>
+      <ion-item *ngFor="let agendamento of agendamentos; let i = index">
+        <ion-label>
+          <h2>{{ agendamento.barbeiro }}</h2>
+          <p><strong>Cliente:</strong> {{ agendamento.cliente }}</p>
+          <p><strong>Email:</strong> {{ agendamento.email }}</p>
+          <p><strong>Data:</strong> {{ agendamento.data }}</p>
+          <p><strong>Horário:</strong> {{ agendamento.horario }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" (click)="excluirAgendamento(i)">
+          <ion-icon name="trash"></ion-icon> <!-- Ícone de lixeira -->
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

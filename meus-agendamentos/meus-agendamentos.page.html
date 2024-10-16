@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Meus Agendamentos</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/agendamento"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="agendamentos-container">
+    <ion-list>
+      <ion-item *ngFor="let agendamento of agendamentos; let i = index">
+        <ion-label>
+          <h2>{{ agendamento.barbeiro }}</h2>
+          <p>Data: {{ agendamento.data }}</p>
+          <p>Horário: {{ agendamento.horario }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" (click)="excluirAgendamento(i)">
+          <ion-icon name="trash"></ion-icon> <!-- Ícone de lixeira -->
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

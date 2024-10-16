@@ -1,0 +1,35 @@
+.page-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; // Para evitar a barra de rolagem
+  background-color:  #212020;
+}
+
+.content-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #212020; // Cor cinza com opacidade
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.finalizar-cadastro {
+  --background: #C38A2E;
+  width: 100%; 
+  --color: #fff;
+  border-radius: 20%; 
+  margin-top: 15px;
+}
+
